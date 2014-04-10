@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Daikoukai.Core.Crypto
 {
-    class RijndaelCryptoParam : CryptoParam
+    public class RijndaelCryptoParam : CryptoParam
     {
         public int KeySize = 256;
         public int BlockSize = 256;

@@ -20,11 +20,31 @@ namespace Daikoukai.Core.Crypto
                 IV = rijParam.IV
             };
 
-            ICryptoTransform decryptor = rij.CreateDecryptor(rij.Key, rij.IV);
+            ICryptoTransform transform = rij.CreateDecryptor(rij.Key, rij.IV);
 
-            byte[] plain = decryptor.TransformFinalBlock(cipher, 0, cipher.Length);
+            byte[] plain = transform.TransformFinalBlock(cipher, 0, cipher.Length);
 
             return plain;
+        }
+
+        public byte[] Encrypt(byte[] plain, CryptoParam param)
+        {
+            RijndaelCryptoParam rijParam = this.ExtractRealRijndaelCyptoParam(param);
+
+            RijndaelManaged rij = new RijndaelManaged()
+            {
+                BlockSize = rijParam.BlockSize,
+                KeySize = rijParam.KeySize,
+                Padding = rijParam.Padding,
+                Mode = rijParam.Mode,
+                Key = rijParam.Key,
+                IV = rijParam.IV
+            };
+
+            ICryptoTransform transform = rij.CreateEncryptor(rijParam.Key, rijParam.IV);
+            byte[] cipher = transform.TransformFinalBlock(plain, 0, plain.Length);
+
+            return cipher;
         }
 
         #endregion
