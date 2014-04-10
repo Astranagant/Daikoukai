@@ -1,4 +1,5 @@
 ﻿
+using System.Security.Cryptography;
 namespace Daikoukai.Core.Crypto
 {
     public abstract class CryptoParam
@@ -18,6 +19,20 @@ namespace Daikoukai.Core.Crypto
             return param;
         }
 
+        public static RijndaelCryptoParam CreateRijndaelCryptoParam(string IVString, string keyString
+            , int blockSize, int keySize, CipherMode mode, PaddingMode padding)
+        {
+            RijndaelCryptoParam param = new RijndaelCryptoParam()
+            {
+                BlockSize = blockSize,
+                IVString = IVString,
+                KeySize = keySize,
+                KeyString = keyString,
+                Mode = mode,
+                Padding = padding
+            };
 
+            return param;
+        }
     }
 }

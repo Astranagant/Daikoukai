@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Daikoukai.Shell" GeneratedClassName="Shell">
+  <Profiles />
+  <Settings>
+    <Setting Name="Key" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00x61CxJ4eA7TxqGHvdXx35U0294ZwSe</Value>
+    </Setting>
+    <Setting Name="IV" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00x61CxJ4eA7TxqGHvdXx35U0294ZwSe</Value>
+    </Setting>
+    <Setting Name="BlockSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">256</Value>
+    </Setting>
+    <Setting Name="KeySize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">256</Value>
+    </Setting>
+    <Setting Name="Padding" Type="System.Security.Cryptography.PaddingMode" Scope="User">
+      <Value Profile="(Default)">Zeros</Value>
+    </Setting>
+    <Setting Name="Mode" Type="System.Security.Cryptography.CipherMode" Scope="User">
+      <Value Profile="(Default)">CBC</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
